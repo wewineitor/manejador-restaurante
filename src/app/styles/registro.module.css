@@ -1,0 +1,120 @@
+
+.conteiner{
+    background: rgb(183,131,58);
+    background: radial-gradient(circle, rgba(183,131,58,1) 0%, rgba(160,75,38,1) 49%, rgba(120,64,52,1) 100%);
+
+    transition: 500ms;
+    transition-property: all;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(var(--principal),0.9);
+    padding: 2rem;
+
+    transition: 500ms;
+    transition-property: all;
+  
+}
+
+@media (min-width: 768px) {
+    .conteiner{
+        display: flex;
+        justify-content:center;
+
+        transition: 500ms;
+        transition-property: all;
+    }
+
+    .content{
+        height: 100vh;
+        padding-top: 0;
+
+        
+    transition: 500ms;
+    transition-property: all;
+
+    }
+}
+
+@media (min-width: 768px) {
+    .nombre_conteiner{
+        display: flex;
+    }
+    .nombre_conteiner div:nth-child(2){
+        margin: auto 2rem;
+    }
+
+}
+.title{
+    color: var(--letrasclaro);
+    font-size: 2.5rem;
+    text-align: center;
+
+    transition: 500ms;
+    transition-property: all;
+}
+@media (min-width: 768px) {
+    .title{
+        font-size: 3.5rem;
+
+        transition: 500ms;
+        transition-property: all;
+    }
+}
+.section{
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+.section label{
+    margin: 1rem 0;
+    font-size: 2rem;
+    color: var(--letrasclaro);
+}
+.section input{
+    padding: 1rem;
+    background-color: var(--oscuro);
+    color: var(--claro);
+    border: none;
+}
+
+.option{
+    background-color: var(--oscuro);
+    color: var(--claro);
+    border: none;
+}
+.option_conteiner{
+    padding: 1rem;
+    background-color: var(--oscuro);
+    color: var(--claro);
+    border: none;
+}
+@media (min-width: 768px) {
+    .conteiner_password{
+        display: flex;
+        justify-content: space-between;
+    }
+    .conteiner_password .section input{
+        width: 100%;
+    }
+}
+.bt{
+    border: none;
+    margin: 2rem 0;
+    padding: 2rem 1rem;
+    font-size: 2.3rem;
+    background-color: var(--verde);
+    color: var(--claro);
+    width: 100%;
+}
+.bt:hover{
+    cursor: pointer;
+    background-color: var(--verdeClaro);
+    color: var(--oscuro);
+    
+    transition: 300ms;
+    transition-property: all;
+
+}

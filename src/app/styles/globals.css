@@ -1,13 +1,21 @@
 :root{
-  --principal: 49, 49, 51;
-  --complementario: #48494d;
+  --principal: 48, 30, 26;
+  --complementario: #a04b26;
   --oscuro: #141416;
   --claro: #cdc9c6;
-  --verde: #7e9b85;
-  --verdeClaro: #56a468;
+  --verde: #b7833a;
+  --verdeClaro: #cd831b;
   --letrasclaro: #839194;
 
 }
+/*
+.color1 { #79aba2 };
+.color2 { #b4b943 };
+.color3 { #b7833a };
+.color4 { #a04b26 };
+.color5 { #301e1a };
+*/
+
 html {
   box-sizing: border-box;
   font-size: 62.5%;
