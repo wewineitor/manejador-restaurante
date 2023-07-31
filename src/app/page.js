@@ -4,8 +4,8 @@ export default function Home(title) {
     <>
       <div>
         
-        <h1>Iniciar sesión</h1>
-      
+        <h1>Dashboard</h1>
+        
       </div>
 
     </>

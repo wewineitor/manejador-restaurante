@@ -1,13 +1,17 @@
-
+@media (min-width: 768px) {
+    .conteiner{
+        display: flex;
+         justify-content:center;
+         height: 100vh;
+     }
+}
 .conteiner{
     display: flex;
     align-items: center;
     justify-content:center;
     height: 100vh;
-    background: rgb(243,255,155);
-    background: linear-gradient(51deg, rgba(243,255,155,1) 0%, rgba(137,184,217,1) 44%, rgba(233,238,119,1) 75%, rgba(105,240,255,1) 100%);
-    backdrop-filter: blur(10px);
-
+    background: rgb(183,131,58);
+    background: radial-gradient(circle, rgba(183,131,58,1) 0%, rgba(160,75,38,1) 49%, rgba(120,64,52,1) 100%);
 }
 .content{
     
@@ -56,8 +60,8 @@
     color: var(--claro);
 }
 .bt{
-    background-color: var(--claro);
-    color: var(--complementario);
+    background-color: var(--complementario);
+    color: var(--claro);
     padding: 1.5rem 0;
     border: none;
     font-size: 2rem;
@@ -88,4 +92,16 @@
 .bt_regis:hover{
     background-color: var(--verdeClaro);
     color: var(--oscuro);
+
+    transition: 300ms;
+    transition-property: all;
+
 }
+.error{
+    text-align: center;
+    color: rgb(195, 39, 39);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 0;
+  }
+  
