@@ -1,0 +1,48 @@
+.conteiner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+}
+.main_conteiner{
+    background: rgb(183,131,58);
+    background: radial-gradient(circle, rgba(183,131,58,1) 0%, rgba(160,75,38,1) 49%, rgba(120,64,52,1) 100%);
+}
+@media (min-width: 768px) {
+    .main_conteiner{
+        height: 100vh;
+    }
+}
+.title{
+    text-align: center;
+    font-size: 3.5rem;
+    color: var(--claro);
+}
+.select{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--claro);
+    background-color: rgb(var(--principal));
+    border: none;
+    border-radius: 1rem;
+}
+.select option{
+    color: var(--claro);
+    font-size: 1rem;
+}
+@media (min-width: 768px) {
+    .empleados_content{
+        display: flex;
+        white-space: nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+}

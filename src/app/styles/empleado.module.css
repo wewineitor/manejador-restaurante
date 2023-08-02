@@ -1,0 +1,41 @@
+.conteiner{
+    background-color: rgba(var(--principal),0.9);
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 1rem;
+}
+.puesto_conteiner{
+    display: flex;
+    align-items: center;
+}
+.puesto_conteiner p{
+    font-size: 2rem;
+    color: var(--claro);
+    font-weight: bolder;
+    margin-right: 1rem;
+}
+.section{
+    padding: 0.2rem 1rem;
+    font-size: 2rem;
+    color: var(--claro);
+    background-color: var(--complementario);
+    border: none;
+    border-radius: 1rem;
+}
+.section option{
+    font-size: 1rem;
+}
+.content{
+    font-size: 2rem;
+    color: var(--claro);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.content span{
+font-weight: normal;
+text-transform: lowercase;
+}
+.conteiner_edad_sexo{
+    display: flex;
+    justify-content: space-between;
+}
