@@ -2,16 +2,15 @@
 .conteiner{
     background: rgb(183,131,58);
     background: radial-gradient(circle, rgba(183,131,58,1) 0%, rgba(160,75,38,1) 49%, rgba(120,64,52,1) 100%);
-
     transition: 500ms;
     transition-property: all;
 }
 .content{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     background-color: rgba(var(--principal),0.9);
     padding: 2rem;
-
     transition: 500ms;
     transition-property: all;
   
@@ -29,6 +28,9 @@
     .content{
         height: 100vh;
         padding-top: 0;
+
+        margin-bottom: 0;
+        padding-bottom: 0;
 
         
     transition: 500ms;
@@ -50,18 +52,8 @@
     color: var(--letrasclaro);
     font-size: 2.5rem;
     text-align: center;
-
-    transition: 500ms;
-    transition-property: all;
 }
-@media (min-width: 768px) {
-    .title{
-        font-size: 3.5rem;
 
-        transition: 500ms;
-        transition-property: all;
-    }
-}
 .section{
     display: flex;
     flex-direction: column;
@@ -72,12 +64,33 @@
     margin: 1rem 0;
     font-size: 2rem;
     color: var(--letrasclaro);
+
+    transition: 500ms;
+    transition-property: all;
 }
 .section input{
     padding: 1rem;
     background-color: var(--oscuro);
     color: var(--claro);
+    border-radius: 0.5rem;
     border: none;
+
+    transition: 500ms;
+    transition-property: all;
+}
+@media (min-width: 768px) {
+    .section label{
+        font-size: 1.5rem;
+
+        transition: 500ms;
+        transition-property: all;
+    }
+    .section input{
+        font-size: 1.5rem;
+
+        transition: 500ms;
+        transition-property: all;
+    }
 }
 
 .option{
@@ -89,25 +102,57 @@
     padding: 1rem;
     background-color: var(--oscuro);
     color: var(--claro);
+    border-radius: 0.5rem;
     border: none;
+
+    transition: 500ms;
+    transition-property: all;
 }
 @media (min-width: 768px) {
+    .option_conteiner{
+        font-size: 1.5rem;
+
+        transition: 500ms;
+        transition-property: all;
+    }
     .conteiner_password{
         display: flex;
         justify-content: space-between;
     }
-    .conteiner_password .section input{
-        width: 100%;
-    }
+}
+.bt_conteiner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .bt{
+    display:inline-block;
+    text-align: center;
     border: none;
     margin: 2rem 0;
+    width: 100%;
     padding: 2rem 1rem;
     font-size: 2.3rem;
     background-color: var(--verde);
+    border-radius: 0.5rem;
     color: var(--claro);
-    width: 100%;
+
+    transition: 500ms;
+    transition-property: all;
+  
+}
+@media (min-width: 768px) {
+    .bt_conteiner{
+        margin-top: 3rem;
+    }
+    .bt{
+        padding: 2rem 4rem;
+        margin-bottom: 0;
+        width: auto;
+
+        transition: 500ms;
+        transition-property: all;
+    }
 }
 .bt:hover{
     cursor: pointer;
