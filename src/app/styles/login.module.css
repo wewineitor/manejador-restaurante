@@ -12,6 +12,9 @@
     height: 100vh;
     background: rgb(183,131,58);
     background: radial-gradient(circle, rgba(183,131,58,1) 0%, rgba(160,75,38,1) 49%, rgba(120,64,52,1) 100%);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(25px);
 }
 .content{
     
@@ -56,8 +59,9 @@
     color: var(--claro);
 }
 .icon{
+    cursor: pointer;
     background-color: var(--complementario);
-    padding: 1rem;
+    padding: 1.2rem;
     color: var(--claro);
     border-radius: 0.5rem 0 0 0.5rem;
 }
