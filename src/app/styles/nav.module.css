@@ -23,16 +23,19 @@ box-shadow: 0px 7px 13px -1px rgba(0,0,0,0.28);
     display:flex;
     position:absolute;
     flex-direction: column;
-    right: 0;
-    top: 0;
-    left: 100%;
     background-color: var(--complementario);
+    top: 0;
+    right: 0;
     height: 100vh;
-    padding: 2rem 0;
-    
+    padding: 2rem;
+    width: 70%;
+    opacity: 0;
+    visibility: hidden;
     transition: 300ms;
     transition-property: all;
+    transform: translateX(100%);
 }
+
 @media (min-width: 768px) {
     .menu{
         left: 0;
@@ -40,12 +43,13 @@ box-shadow: 0px 7px 13px -1px rgba(0,0,0,0.28);
         position: relative;
         height: auto;
         padding: 0;
+      
     }
 }
 .open_menu{
-    position: absolute;
-    left: 30%;
-    padding: 2rem;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0%);
 
 }
 .pantalla_negra{

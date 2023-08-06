@@ -1,4 +1,5 @@
-.main_conteiner{
+
+.principal_main{
     height: 100vh;
     background: rgb(183,131,58);
     background: radial-gradient(circle, rgba(183,131,58,1) 0%, rgba(160,75,38,1) 49%, rgba(120,64,52,1) 100%);
@@ -9,9 +10,9 @@
     align-items: center;
     justify-content: center;
 }
+
 .main{
     padding-top: 1rem;
-    padding-bottom: 1rem;
 
 }
 

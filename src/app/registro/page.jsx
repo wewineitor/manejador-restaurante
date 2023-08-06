@@ -39,29 +39,29 @@ export default function Registro() {
           <div className={styles.nombre_conteiner}>
             <div className={styles.section}>
               <label htmlFor="Nombre">Nombres (s)</label>
-              <input type="text" placeholder="Ingresa tu nombre" name="name" />
+              <input type="text" placeholder="Ingresa tu nombre" name="name" required />
             </div>
 
             <div className={styles.section}>
               <label htmlFor="Apellido Paterno">Apellido Paterno</label>
-              <input type="text" placeholder="Ingresa apellido paterno" name="lastName" />
+              <input type="text" placeholder="Ingresa apellido paterno" name="lastName" required/>
             </div>
 
             <div className={styles.section}>
               <label htmlFor="Apellido Materno">Apellido Materno</label>
-              <input type="text" placeholder="Ingresa apellido materno" name="motherLastName" />
+              <input type="text" placeholder="Ingresa apellido materno" name="motherLastName" required />
             </div>
           </div>
 
           <div className={styles.conteiner_password}>
             <div className={styles.section}>
               <label htmlFor="Contraseña">Contraseña</label>
-              <input type="password" placeholder="Ingresa tu contraseña" name="password" />
+              <input type="password" placeholder="Ingresa tu contraseña" name="password" required />
             </div>
 
             <div className={styles.section}>
               <label htmlFor="telefono">Telefono</label>
-              <input type="number" placeholder="ejem: 5512346543" name="phone" />
+              <input type="number" placeholder="ejem: 5512346543" name="phone" required />
             </div>
           </div>
           <div className={styles.section}>
