@@ -88,6 +88,7 @@ export default function Nav() {
           <Link className={`${styles.url} ${pathname === '/dashboard/cuenta' ? styles.page_select : ('')}`} href={'/dashboard/cuenta'}>Cuenta</Link>
           </div>
       </nav>
+
     </header>
   )
 }

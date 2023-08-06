@@ -4,66 +4,41 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import styles from "../styles/login.module.css";
 export default function Login() {
-  const [usuarios, setUsuarios] = useState({});
-  const [usuarioValido, setUsuarioValido] = useState(false);
+  const [credenciales, setCredenciales] = useState({
+    username: "",
+    password: "",
+  });
   const [error, setError] = useState(false);
-  const [correo, setCorreo] = useState("");
-  const [password, setPassword] = useState("");
   const router = useRouter();
 
-  useEffect(() => {
+  const HandleCredenciales = (e) => {
+    setCredenciales({ ...credenciales, [e.target.name]: e.target.value });
+  };
+  const HandleSubmit = (e) => {
+    e.preventDefault();
+
     const consultarApi = async () => {
       let username = "wewin";
       let password = "1234";
       let headers = new Headers();
-      
 
-      headers.append("Authorization","Basic " + btoa(username + ":" + password));
-      const peticion = await fetch('http://localhost:8080/api/user/get',
-      {
-        method:'GET',
-        headers:headers
+      headers.append(
+        "Authorization",
+        "Basic " + btoa(username + ":" + password));
+      const peticion = await fetch("http://localhost:8080/api/user/get", {
+        method: "GET",
+        headers: headers,
       });
       const respuesta = await peticion.json();
-      setUsuarios(respuesta)
-      console.log(respuesta);
     };
     consultarApi();
-  }, []);
-
-  const validacionUsuario = (e) => {
-    e.preventDefault();
-
-    for (let i = 0; i < usuarios.length; i++) {
-      //console.log(usuarios[i].email);
-      if (correo === usuarios[i].username && password === usuarios[i].password) {
-        console.log("Datos validos");
-        setError(false);
-        setUsuarioValido(true);
-        router.push("/dashboard/empleados");
-        break;
-      }
-      if (!usuarioValido) {
-        console.log("el usuario no está registrado");
-        setError(true);
-        setTimeout(() => {
-          setError(false);
-        }, 2000);
-      }
-    }
-  };
-  const HandleCorreo = (e) => {
-    setCorreo(e.target.value);
-  };
-  const HandlePassword = (e) => {
-    setPassword(e.target.value);
   };
 
   return (
     <main className={styles.conteiner}>
       <div className={styles.content}>
         <h1 className={styles.title}>Inicia sesión</h1>
-        <form action="">
+        <form action="" onSubmit={HandleSubmit}>
           {error ? (
             <p className={styles.error}>Correo o contraseña no validos</p>
           ) : (
@@ -94,9 +69,8 @@ export default function Login() {
               name="username"
               id="userName"
               placeholder="Nombre de usuario"
+              onChange={HandleCredenciales}
               required
-              onChange={HandleCorreo}
-              value={correo}
             />
           </div>
           <div className={styles.section_content}>
@@ -122,31 +96,16 @@ export default function Login() {
 
             <input
               type="password"
-              name="userPassword"
+              name="password"
               id="userPassword"
               placeholder="contraseña"
+              onChange={HandleCredenciales}
               required
-              onChange={HandlePassword}
-              value={password}
             />
           </div>
-          {usuarioValido ? (
-            <button
-              onClick={validacionUsuario}
-              type="submit"
-              className={styles.bt}
-            >
-              Entrar
-            </button>
-          ) : (
-            <button
-              onClick={validacionUsuario}
-              type="submit"
-              className={styles.bt}
-            >
-              Entrar
-            </button>
-          )}
+          <button type="submit" className={styles.bt}>
+            Entrar
+          </button>
 
           <h2 className={styles.msg_password}>
             ¿Olvidaste tu contraseña?{" "}
