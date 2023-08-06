@@ -6,18 +6,27 @@ import styles from "../styles/login.module.css";
 export default function Login() {
   const [usuarios, setUsuarios] = useState({});
   const [usuarioValido, setUsuarioValido] = useState(false);
-  const [error,setError] = useState(false);
+  const [error, setError] = useState(false);
   const [correo, setCorreo] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
 
   useEffect(() => {
     const consultarApi = async () => {
-      const respuesta = await fetch(
-        `http://localhost:3001/fetch/users/customMiddleware`
-      );
-      const { result } = await respuesta.json();
-      setUsuarios(result);
+      let username = "wewin";
+      let password = "1234";
+      let headers = new Headers();
+      
+
+      headers.append("Authorization","Basic " + btoa(username + ":" + password));
+      const peticion = await fetch('http://localhost:8080/api/user/get',
+      {
+        method:'GET',
+        headers:headers
+      });
+      const respuesta = await peticion.json();
+      setUsuarios(respuesta)
+      console.log(respuesta);
     };
     consultarApi();
   }, []);
@@ -27,14 +36,14 @@ export default function Login() {
 
     for (let i = 0; i < usuarios.length; i++) {
       //console.log(usuarios[i].email);
-      if (correo === usuarios[i].email && password === usuarios[i].username) {
+      if (correo === usuarios[i].username && password === usuarios[i].password) {
         console.log("Datos validos");
         setError(false);
         setUsuarioValido(true);
-        router.push('/')
+        router.push("/dashboard/empleados");
         break;
-      } 
-      if (!usuarioValido){
+      }
+      if (!usuarioValido) {
         console.log("el usuario no está registrado");
         setError(true);
         setTimeout(() => {
@@ -55,7 +64,11 @@ export default function Login() {
       <div className={styles.content}>
         <h1 className={styles.title}>Inicia sesión</h1>
         <form action="">
-          {error ? <p className={styles.error}>Correo o contraseña no validos</p> : <> </>}
+          {error ? (
+            <p className={styles.error}>Correo o contraseña no validos</p>
+          ) : (
+            <> </>
+          )}
           <div className={styles.section_content}>
             <div className={styles.icon}>
               <svg
@@ -117,12 +130,23 @@ export default function Login() {
               value={password}
             />
           </div>
-          {usuarioValido ? <button onClick={validacionUsuario} type="submit" className={styles.bt}>
+          {usuarioValido ? (
+            <button
+              onClick={validacionUsuario}
+              type="submit"
+              className={styles.bt}
+            >
               Entrar
-            </button>: (<button onClick={validacionUsuario} type="submit" className={styles.bt}>
+            </button>
+          ) : (
+            <button
+              onClick={validacionUsuario}
+              type="submit"
+              className={styles.bt}
+            >
               Entrar
-            </button>)}
-    
+            </button>
+          )}
 
           <h2 className={styles.msg_password}>
             ¿Olvidaste tu contraseña?{" "}

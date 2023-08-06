@@ -39,15 +39,7 @@
     }
 }
 
-@media (min-width: 768px) {
-    .nombre_conteiner{
-        display: flex;
-    }
-    .nombre_conteiner div:nth-child(2){
-        margin: auto 2rem;
-    }
 
-}
 .title{
     color: var(--letrasclaro);
     font-size: 2.5rem;
@@ -142,13 +134,10 @@
   
 }
 @media (min-width: 768px) {
-    .bt_conteiner{
-        margin-top: 3rem;
-    }
     .bt{
         padding: 2rem 4rem;
-        margin-bottom: 0;
-        width: auto;
+        
+        width:0 auto;
 
         transition: 500ms;
         transition-property: all;
@@ -161,5 +150,14 @@
     
     transition: 300ms;
     transition-property: all;
+
+}
+@media (min-width: 768px) {
+    .conteiner_password div:nth-child(1){
+        margin-right: 1rem;
+    }
+    .conteiner_password div:nth-child(2){
+        margin-left: 1rem;
+    }
 
 }

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { usePathname } from 'next/navigation'
-import styles from '../styles/nav.module.css'
+import styles from './styles/nav.module.css'
 export default function Nav() {
   const pathname = usePathname();
   const [openMenu, setOpenMenu] = useState(false);
@@ -26,8 +26,6 @@ export default function Nav() {
       </svg>
       </div>
 
-
-
       <nav className={`${styles.menu} ${openMenu ? styles.open_menu : ('') }`}>
         
         <div className={styles.close_content} onClick={HandleClose}>
@@ -49,11 +47,11 @@ export default function Nav() {
           </svg>
           </div>
 
-          <Link className={`${styles.url} ${pathname === '/dashboard/empleados' ? styles.page_select : ('')}`} href={'#'}>Empleados</Link>
+          <Link className={`${styles.url} ${pathname === '/dashboard/empleados' ? styles.page_select : ('')}`} href={'/dashboard/empleados'}>Empleados</Link>
         </div>
 
         <div className={styles.menu_content}>
-          <div className={styles.icon}>
+          <div className={`${styles.icon} ${pathname === '/dashboard/platillos' ? styles.page_select : ('')}`}>
           <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-salad" width="32" height="32" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M4 11h16a1 1 0 0 1 1 1v.5c0 1.5 -2.517 5.573 -4 6.5v1a1 1 0 0 1 -1 1h-8a1 1 0 0 1 -1 -1v-1c-1.687 -1.054 -4 -5 -4 -6.5v-.5a1 1 0 0 1 1 -1z" />
@@ -63,10 +61,10 @@ export default function Nav() {
             <path d="M13 11v-.5a2.5 2.5 0 1 0 -5 0v.5" />
           </svg>
           </div>
-          <Link className={styles.url} href={'#'}>Platillos</Link>
+          <Link className={`${styles.url} ${pathname === '/dashboard/platillos' ? styles.page_select : ('')}`} href={'/dashboard/platillos'}>Platillos</Link>
         </div>
         <div className={styles.menu_content}>
-          <div className={styles.icon}>
+          <div className={`${styles.icon} ${pathname === '/dashboard/estadisticas' ? styles.page_select : ('')}`}>
           <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-chart-bar" width="32" height="32" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M3 12m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
@@ -76,21 +74,19 @@ export default function Nav() {
           </svg>
           </div>
  
-          <Link className={styles.url} href={'#'}>Estadisticas</Link>
+          <Link className={`${styles.url} ${pathname === '/dashboard/estadisticas' ? styles.page_select : ('')}`} href={'/dashboard/estadisticas'}>Estadisticas</Link>
         </div>
 
         <div className={styles.menu_content}>
-          <div className={styles.icon}>
+          <div className={`${styles.icon} ${pathname === '/dashboard/cuenta' ? styles.page_select : ('')}`}>
           <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-user" width="32" height="32" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
             <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
           </svg>
+          </div>         
+          <Link className={`${styles.url} ${pathname === '/dashboard/cuenta' ? styles.page_select : ('')}`} href={'/dashboard/cuenta'}>Cuenta</Link>
           </div>
-
-          <Link className={styles.url} href={'#'}>Cuenta</Link>
-        </div>
-
       </nav>
     </header>
   )

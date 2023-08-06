@@ -1,6 +1,6 @@
 import styles from "../../styles/empleados.module.css"
 import Empleado from "./empleado"
-export default function Empleados() {
+export default function EmpleadosSection() {
   return (
     <main className={styles.main}>
         <h1 className={styles.title}>Empleados</h1>
@@ -12,8 +12,6 @@ export default function Empleados() {
         </select>
         </div>
         <section className={styles.empleados_content}>
-        <Empleado/>
-        <Empleado/>
         <Empleado/>
         </section>
   
