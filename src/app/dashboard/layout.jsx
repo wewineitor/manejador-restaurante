@@ -1,10 +1,11 @@
 "use client"
-import { useState } from 'react'
+import { Children, useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import { usePathname } from 'next/navigation'
-import styles from './styles/nav.module.css'
-export default function Nav() {
+import { sesionNoValida } from '../../helpers/helper'
+import styles from '../styles/nav.module.css'
+export default function Nav({children}) {
+  sesionNoValida();
   const pathname = usePathname();
   const [openMenu, setOpenMenu] = useState(false);
 
@@ -15,6 +16,7 @@ export default function Nav() {
     setOpenMenu(false)
   }
   return (
+   <>
     <header className={styles.nav}>
       <div className={`${openMenu ? styles.pantalla_negra : ('') }`}></div>
       <div className={styles.bt_menu} onClick={HandleMenu}>
@@ -90,5 +92,7 @@ export default function Nav() {
       </nav>
 
     </header>
+   {children}
+   </>
   )
 }

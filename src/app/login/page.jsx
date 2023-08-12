@@ -1,35 +1,39 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Error from "../../components/error.js";
 import styles from "../styles/login.module.css";
 export default function Login() {
-  const [credenciales, setCredenciales] = useState({
-    username: "",
-    password: "",
-  });
   const [error, setError] = useState(false);
   const router = useRouter();
-
-  const HandleCredenciales = (e) => {
-    setCredenciales({ ...credenciales, [e.target.name]: e.target.value });
-  };
   const HandleSubmit = (e) => {
     e.preventDefault();
+    let headers = new Headers();
+    const data = new FormData(e.target);
+    headers.append("Content-Type", "application/json");
 
     const consultarApi = async () => {
-      let username = "wewin";
-      let password = "1234";
-      let headers = new Headers();
-
-      headers.append(
-        "Authorization",
-        "Basic " + btoa(username + ":" + password));
-      const peticion = await fetch("http://localhost:8080/api/user/get", {
-        method: "GET",
+      const peticion = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/user/login`, {
+        method: "POST",
         headers: headers,
+        body:JSON.stringify({"username":data.get("username"),"password":data.get("password")})
       });
       const respuesta = await peticion.json();
+      console.log(respuesta);
+      if(respuesta.message === 'ok'){
+        console.log('El usuario es valido')
+        setError(false)
+        sessionStorage.setItem('username',data.get("username"))
+        sessionStorage.setItem('password',data.get("password"))
+        router.push('/dashboard/empleados')
+      }else{
+        console.log('El usuario no es valido')
+        setError(true)
+        setTimeout(() => {
+          setError(false);
+        }, 2000);
+      }
     };
     consultarApi();
   };
@@ -40,7 +44,7 @@ export default function Login() {
         <h1 className={styles.title}>Inicia sesión</h1>
         <form action="" onSubmit={HandleSubmit}>
           {error ? (
-            <p className={styles.error}>Correo o contraseña no validos</p>
+            <Error mensaje={"Correo o contraseña no valido"} />
           ) : (
             <> </>
           )}
@@ -69,7 +73,6 @@ export default function Login() {
               name="username"
               id="userName"
               placeholder="Nombre de usuario"
-              onChange={HandleCredenciales}
               required
             />
           </div>
@@ -99,7 +102,6 @@ export default function Login() {
               name="password"
               id="userPassword"
               placeholder="contraseña"
-              onChange={HandleCredenciales}
               required
             />
           </div>

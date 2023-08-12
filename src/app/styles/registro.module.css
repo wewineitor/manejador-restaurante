@@ -11,6 +11,7 @@
     justify-content: center;
     background-color: rgba(var(--principal),0.9);
     padding: 2rem;
+
     transition: 500ms;
     transition-property: all;
   
@@ -108,7 +109,7 @@
 @media (min-width: 768px) {
     .option_conteiner{
         font-size: 1.5rem;
-
+        width: 20rem;
         transition: 500ms;
         transition-property: all;
     }
@@ -164,5 +165,26 @@
     .conteiner_password div:nth-child(2){
         margin-left: 1rem;
     }
-
+    .conteiner_tel_rol{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.headerPassword{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bt_view_pass{
+    display: flex;
+    align-items: center;
+}
+.bt_view_pass svg{
+    stroke: var(--letrasclaro);
+    width: 25px;
+    height: 25px;
+}
+.bt_view_pass svg:hover{
+    cursor: pointer;
+    stroke: var(--claro);
 }

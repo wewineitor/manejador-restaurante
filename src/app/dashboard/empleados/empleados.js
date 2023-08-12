@@ -1,8 +1,8 @@
 import styles from "../../styles/empleados.module.css"
 import Empleado from "./empleado"
-export default function EmpleadosSection() {
+export default function EmpleadosSection({empleados}) {
   return (
-    <main className={styles.main}>
+    <section className={styles.main}>
         <h1 className={styles.title}>Empleados</h1>
         <div className={styles.conteiner}>
         <select className={styles.select} name="" id="">
@@ -12,9 +12,12 @@ export default function EmpleadosSection() {
         </select>
         </div>
         <section className={styles.empleados_content}>
-        <Empleado/>
+          {empleados.map(empleado=>(
+              <Empleado
+              key={empleado.username} 
+              empleado={empleado}/>
+          ))}
         </section>
-  
-    </main>
+    </section>
   )
 }
