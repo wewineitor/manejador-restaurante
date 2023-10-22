@@ -1,6 +1,6 @@
 .conteiner{
     background-color: rgba(var(--principal),0.9);
-    padding: 2rem;
+    padding: 3rem 2rem;
     margin: 2rem;
     border-radius: 1rem;
 }
@@ -12,7 +12,10 @@
     font-size: 2rem;
     color: var(--claro);
     font-weight: bolder;
+    text-transform: uppercase;
+    margin: 0;
     margin-right: 1rem;
+   
 }
 .section{
     padding: 0.2rem 1rem;
@@ -38,4 +41,26 @@ text-transform: lowercase;
 .conteiner_edad_sexo{
     display: flex;
     justify-content: space-between;
+}
+.bts_conteiner{
+    display: flex;
+  
+    justify-content: space-between;
+}
+.bts_conteiner button{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--claro);
+}
+.bts_conteiner button:hover{
+    cursor: pointer;
+}
+.bt_editar{
+    background-color: var(--btEditar);
+}
+.bt_eliminar{
+    background-color: var(--verdeClaro);
 }

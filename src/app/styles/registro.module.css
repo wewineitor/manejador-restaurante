@@ -1,7 +1,8 @@
 
 .conteiner{
-    background: rgb(183,131,58);
-    background: radial-gradient(circle, rgba(183,131,58,1) 0%, rgba(160,75,38,1) 49%, rgba(120,64,52,1) 100%);
+    background-image: url('../../img/fondo.webp');
+    background-size: cover;
+
     transition: 500ms;
     transition-property: all;
 }
@@ -9,8 +10,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgba(var(--principal),0.9);
+    background-color: rgba(var(--principal),0.8);
     padding: 2rem;
+
     transition: 500ms;
     transition-property: all;
   
@@ -108,7 +110,7 @@
 @media (min-width: 768px) {
     .option_conteiner{
         font-size: 1.5rem;
-
+        width: 20rem;
         transition: 500ms;
         transition-property: all;
     }
@@ -130,8 +132,8 @@
     width: 100%;
     padding: 2rem 1rem;
     font-size: 2.3rem;
-    background-color: var(--verde);
     border-radius: 0.5rem;
+    background-color: var(--complementario);
     color: var(--claro);
 
     transition: 500ms;
@@ -150,7 +152,7 @@
 }
 .bt:hover{
     cursor: pointer;
-    background-color: var(--verdeClaro);
+    background-color: var(--letrasclaro);
     color: var(--oscuro);
     
     transition: 300ms;
@@ -164,5 +166,26 @@
     .conteiner_password div:nth-child(2){
         margin-left: 1rem;
     }
-
+    .conteiner_tel_rol{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.headerPassword{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bt_view_pass{
+    display: flex;
+    align-items: center;
+}
+.bt_view_pass svg{
+    stroke: var(--letrasclaro);
+    width: 25px;
+    height: 25px;
+}
+.bt_view_pass svg:hover{
+    cursor: pointer;
+    stroke: var(--claro);
 }
