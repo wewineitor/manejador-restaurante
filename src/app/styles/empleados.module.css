@@ -1,9 +1,9 @@
 
 .main_conteiner{
     padding: 1rem 0;
-
-    background: rgb(183,131,58);
-    background: radial-gradient(circle, rgba(183,131,58,1) 0%, rgba(160,75,38,1) 49%, rgba(120,64,52,1) 100%);
+    background-image: url('../../img/fondo.webp');
+    background-size: cover;  
+    height: 100vh;
 }
 .conteiner{
     display: flex;

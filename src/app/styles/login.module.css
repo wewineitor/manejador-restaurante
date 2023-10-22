@@ -10,11 +10,11 @@
     align-items: center;
     justify-content:center;
     height: 100vh;
-    background: rgb(183,131,58);
-    background: radial-gradient(circle, rgba(183,131,58,1) 0%, rgba(160,75,38,1) 49%, rgba(120,64,52,1) 100%);
 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(25px);
+    background-image: url('../../img/fondo.webp');
+    background-size: cover;
+
+    
 }
 .content{
     
@@ -23,8 +23,7 @@
     align-items: center;
     background-color: rgba(var(--principal),0.9);
     border-radius: 0.5rem;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(25px);
+    
     padding: 2rem;
     padding-bottom: 4rem;
     transition: 500ms;
@@ -39,7 +38,7 @@
     }
 }
 .title{
-    color: var(--letrasclaro);
+    color: var(--white);
     font-size: 2.5rem;
     margin: 3rem 0;
     font-weight: normal;
@@ -96,14 +95,7 @@
 .bt_regis{
     background-color: var(--verde);
 }
-.bt_regis:hover{
-    background-color: var(--verdeClaro);
-    color: var(--oscuro);
 
-    transition: 300ms;
-    transition-property: all;
-
-}
 .error{
     text-align: center;
     color: rgb(195, 39, 39);

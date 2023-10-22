@@ -2,20 +2,14 @@
   --principal: 48, 30, 26;
   --complementario: #a04b26;
   --oscuro: #141416;
-  --claro: #cdc9c6;
+  --claro: #ded2c9;
+  --white: #FFFF;
   --verde: #b7833a;
   --verdeClaro: #cd831b;
   --letrasclaro: #839194;
   --btEditar: #79aba2  ;
 
 }
-/*
-.color1 { #79aba2 };
-.color2 { #b4b943 };
-.color3 { #b7833a };
-.color4 { #a04b26 };
-.color5 { #301e1a };
-*/
 
 html {
   box-sizing: border-box;
@@ -24,9 +18,12 @@ html {
 }
 body{
   width: 100%;
-  height: 100vh;
   overflow-x: hidden;
+  
 }
 *, *:before, *:after {
   box-sizing: inherit;
+}
+.off_scroll{
+  overflow: hidden;
 }

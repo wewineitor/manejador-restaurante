@@ -30,14 +30,7 @@ export default function Registro() {
         data.get("phone").substring(0, 1) +
         data.get("phone").substring(data.get("phone").length - 1);
 
-      let username = "admin";
-      let password = "admin";
-      let headers = new Headers();
-
-      headers.append(
-        "Authorization",
-        "Basic " + btoa(username + ":" + password)
-      );
+        let headers = new Headers();
       headers.append("Content-Type", "application/json");
       await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/user/create`, {
         method: "POST",

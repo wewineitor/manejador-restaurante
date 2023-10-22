@@ -1,21 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, use } from 'react'
+import scrollOff from '../../../hooks/scrollOff';
 import styles from '../../styles/empleado.module.css'
-export default function Empleado({empleado}) {
+export default function Empleado({empleado,setModal}) {
 
-    const ConsumirApi = async ()=>{
-        let username = "admin";
-        let password = "admin";
-        let headers = new Headers();
-      
-        headers.append(
-          "Authorization",
-          "Basic " + btoa(username + ":" + password));
-
-        const respuesta = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/user/delete/${empleado.username}`,{
-            headers:headers,
-            method:'DELETE'
-        })
+    const HandleModal = ()=>{
+        setModal(true);
+        scrollOff('true')
+        sessionStorage.setItem('EmpleadoPorEliminar',empleado.username)
     }
+
+        
 
     const {username,name,lastName,motherLastName,phone,roles} = empleado;
   return (
@@ -37,7 +31,7 @@ export default function Empleado({empleado}) {
         </div>
         <div className={styles.bts_conteiner}>
             <button className={styles.bt_editar}>Editar</button>
-            <button className={styles.bt_eliminar} onClick={ConsumirApi}>Eliminar</button>
+            <button className={styles.bt_eliminar} onClick={HandleModal}>Eliminar</button>
         </div>
         
     </div>

@@ -1,6 +1,5 @@
 "use client"
 import Link from "next/link"
-import useUsuario from "../../../hooks/useUsuario"
 import styles from '../../styles/registroExitoso.module.css'
 export default function page() {
   const username = sessionStorage.getItem('username')
